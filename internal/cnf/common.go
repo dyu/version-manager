@@ -119,6 +119,7 @@ func UseCustomedMirrorUrl(dUrl string) string {
 // Prepares request.Fetcher for URL.
 func GetFetcher(dUrl string) (fetcher *request.Fetcher) {
 	// use customed mirror
+	/*
 	oldDUrl := dUrl
 	dUrl = UseCustomedMirrorUrl(dUrl)
 
@@ -127,6 +128,7 @@ func GetFetcher(dUrl string) (fetcher *request.Fetcher) {
 	if reverseProxy != "" && oldDUrl == dUrl {
 		dUrl = reverseProxy + "/" + dUrl
 	}
+	*/
 	fetcher = request.NewFetcher()
 
 	// multi-threads only for large files.
@@ -135,9 +137,11 @@ func GetFetcher(dUrl string) (fetcher *request.Fetcher) {
 	}
 
 	fetcher.SetUrl(strings.Trim(dUrl, "/"))
+	/*
 	if !strings.Contains(dUrl, "gitee.com") && oldDUrl == dUrl {
 		// do not use proxy for gitee.
 		fetcher.Proxy = localProxy
 	}
+	*/
 	return
 }
