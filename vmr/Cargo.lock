@@ -104,7 +104,7 @@ version = "1.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "40c48f72fd53cd289104fc64099abca73db4166ad86ea0b4341abe65af83dadc"
 dependencies = [
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -115,7 +115,7 @@ checksum = "291e6a250ff86cd4a820112fb8898808a366d8f9f58ce16d1f538353ad55747d"
 dependencies = [
  "anstyle",
  "once_cell_polyfill",
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -580,18 +580,6 @@ checksum = "031ad3d167622974ed636505ae4556267ed4aa2aea0464122fa6bc9698a32825"
 [[package]]
 name = "console"
 version = "0.16.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e96a4956774c13c126a8b5af4daa79384f4d826534c95a02d76afb39e2ab64e3"
-dependencies = [
- "encode_unicode",
- "libc",
- "unicode-width",
- "windows-sys 0.61.2",
-]
-
-[[package]]
-name = "console"
-version = "0.16.6"
 source = "git+https://github.com/dyu/console.git?branch=legacy#5424c73f14c281e3551f713e6e2231ed10753454"
 dependencies = [
  "encode_unicode",
@@ -864,7 +852,7 @@ dependencies = [
  "libc",
  "option-ext",
  "redox_users",
- "windows-sys 0.61.2",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -986,7 +974,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "39cab71617ae0d63f51a36d69f866391735b51691dbda63cf6f96d042b63efeb"
 dependencies = [
  "libc",
- "windows-sys 0.61.2",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
@@ -1111,13 +1099,12 @@ dependencies = [
 [[package]]
 name = "fs4"
 version = "1.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7e72ed92b67c146290f88e9c89d60ca163ea417a446f61ffd7b72df3e7f1dfd5"
+source = "git+https://github.com/dyu/fs4.git?branch=legacy#c5b621e560f7191610bf459db406212dae983e51"
 dependencies = [
  "fs-err",
  "rustix",
  "tokio",
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -1703,22 +1690,9 @@ dependencies = [
 [[package]]
 name = "indicatif"
 version = "0.18.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9433806cd6b4ec1aba79c021c7e4c58fb4c3b9977c085062e611ac929998fb0c"
-dependencies = [
- "console 0.16.6 (registry+https://github.com/rust-lang/crates.io-index)",
- "portable-atomic",
- "unicode-width",
- "unit-prefix",
- "web-time",
-]
-
-[[package]]
-name = "indicatif"
-version = "0.18.6"
 source = "git+https://github.com/dyu/indicatif.git?branch=legacy#1ea26a1a2cd648e2db4f2672c8fc3ce34554d666"
 dependencies = [
- "console 0.16.6 (git+https://github.com/dyu/console.git?branch=legacy)",
+ "console",
  "portable-atomic",
  "unicode-width",
  "unit-prefix",
@@ -1911,7 +1885,7 @@ version = "1.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7a1886916523694cd6ea3d175f03a1e5010699a2a4cc13696d83d7bea1d80638"
 dependencies = [
- "windows-sys 0.61.2",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -2098,13 +2072,13 @@ dependencies = [
 
 [[package]]
 name = "mio"
-version = "1.2.3"
+version = "1.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4b18443e9c262bfe8fa82f51666e2642c53393f7e5c27b3e1aeab922cff5b9d8"
+checksum = "78bed444cc8a2160f01cbcf811ef18cac863ad68ae8ca62092e8db51d51c761c"
 dependencies = [
  "libc",
  "wasi",
- "windows-sys 0.61.2",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -2589,7 +2563,7 @@ dependencies = [
  "once_cell",
  "socket2",
  "tracing",
- "windows-sys 0.61.2",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
@@ -2716,7 +2690,7 @@ dependencies = [
  "anyhow",
  "astral-reqwest-middleware",
  "base64 0.22.1",
- "console 0.16.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "console",
  "digest 0.11.3",
  "dirs",
  "filetime",
@@ -2725,7 +2699,7 @@ dependencies = [
  "hex",
  "humantime",
  "indexmap 2.14.0",
- "indicatif 0.18.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "indicatif",
  "itertools 0.15.0",
  "jiff",
  "memchr",
@@ -3300,7 +3274,7 @@ dependencies = [
  "errno",
  "libc",
  "linux-raw-sys",
- "windows-sys 0.61.2",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
@@ -3358,7 +3332,7 @@ dependencies = [
  "security-framework",
  "security-framework-sys",
  "webpki-root-certs",
- "windows-sys 0.61.2",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
@@ -3815,7 +3789,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c3d1e2c7f27f8d4cb10542a02c49005dbd6e93095799d6f3be745fae9f8fedd4"
 dependencies = [
  "libc",
- "windows-sys 0.61.2",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]
@@ -3959,7 +3933,7 @@ dependencies = [
  "getrandom 0.4.3",
  "once_cell",
  "rustix",
- "windows-sys 0.61.2",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
@@ -4442,7 +4416,7 @@ dependencies = [
 name = "vmr-lua"
 version = "0.8.1"
 dependencies = [
- "indicatif 0.18.6 (git+https://github.com/dyu/indicatif.git?branch=legacy)",
+ "indicatif",
  "mlua",
  "regex",
  "reqwest 0.12.28",
@@ -4459,7 +4433,7 @@ dependencies = [
 name = "vmr-net"
 version = "0.8.1"
 dependencies = [
- "indicatif 0.18.6 (git+https://github.com/dyu/indicatif.git?branch=legacy)",
+ "indicatif",
  "md-5 0.10.6",
  "reqwest 0.12.28",
  "serde",
@@ -4474,7 +4448,7 @@ name = "vmr-pixi"
 version = "0.8.1"
 dependencies = [
  "astral-reqwest-middleware",
- "indicatif 0.18.6 (git+https://github.com/dyu/indicatif.git?branch=legacy)",
+ "indicatif",
  "itertools 0.15.0",
  "rattler",
  "rattler_cache",
@@ -4712,7 +4686,7 @@ version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22"
 dependencies = [
- "windows-sys 0.61.2",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
@@ -4861,15 +4835,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f2f500e4d28234f72040990ec9d39e3a6b950f9f22d3dba18416c35882612bcb"
 dependencies = [
  "windows-targets 0.53.5",
-]
-
-[[package]]
-name = "windows-sys"
-version = "0.61.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ae137229bcbd6cdf0f7b80a31df61766145077ddf49416a728b02cb3921ff3fc"
-dependencies = [
- "windows-link",
 ]
 
 [[package]]

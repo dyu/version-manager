@@ -16,3 +16,8 @@ thiserror = { version = "2.0.21" }
 toml = "0.8"
 dirs = "6"
 regex = "1"
+
+[patch.crates-io]
+console = { git = "https://github.com/dyu/console.git", branch = "legacy" }
+fs4 = { git = "https://github.com/dyu/fs4.git", branch = "legacy" }
+indicatif = { git = "https://github.com/dyu/indicatif.git", branch = "legacy" }
