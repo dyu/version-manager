@@ -8,7 +8,11 @@ edition = "2024"
 rust-version = "1.88"
 
 [workspace.dependencies]
+indicatif = { git = "https://github.com/dyu/indicatif.git", branch = "legacy" }
+itertools = { version = "0.15.0" }
 serde = { version = "1", features = ["derive"] }
+strum = { version = "0.28.0" }
+thiserror = { version = "2.0.21" }
 toml = "0.8"
 dirs = "6"
 regex = "1"

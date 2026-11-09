@@ -19,7 +19,7 @@ use indicatif::{ProgressBar, ProgressStyle};
 use rattler::install::{IndicatifReporter, Installer};
 use rattler_cache::package_cache::PackageCache;
 use rattler_conda_types::{
-    MatchSpec, PackageRecord, ParseStrictness, RepoDataRecord, Subdir,
+    MatchSpec, PackageRecord, ParseStrictness, RepoDataRecord, Platform,
     package::DistArchiveIdentifier,
 };
 use rattler_solve::{SolverImpl, SolverTask};
@@ -275,7 +275,7 @@ pub fn resolve_packages(name: &str, version: &str) -> Result<Vec<RepoDataRecord>
 
     let virtual_packages = rattler_virtual_packages::VirtualPackage::detect(
         &rattler_virtual_packages::VirtualPackageOverrides::default(),
-        None,
+        // None,
     )
     .map_err(|e| format!("failed to detect virtual packages: {e}"))?
     .into_iter()
@@ -300,8 +300,8 @@ pub fn resolve_packages(name: &str, version: &str) -> Result<Vec<RepoDataRecord>
 pub fn install_packages(records: &[RepoDataRecord], prefix: &Path) -> Result<(), String> {
     fs::create_dir_all(prefix).map_err(|e| e.to_string())?;
 
-    let target = Subdir::from_str(current_subdir().unwrap_or("noarch"))
-        .or_else(|_| Subdir::from_str("noarch"))
+    let target = Platform::from_str(current_subdir().unwrap_or("noarch"))
+        .or_else(|_| Platform::from_str("noarch"))
         .map_err(|e| e.to_string())?;
 
     let runtime = tokio::runtime::Builder::new_multi_thread()
